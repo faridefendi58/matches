@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import id.web.jagungbakar.matches.MainActivity;
 import id.web.jagungbakar.matches.R;
 import id.web.jagungbakar.matches.common.Memory;
 import id.web.jagungbakar.matches.common.Music;
@@ -143,7 +144,8 @@ public class Engine extends EventObserverAdapter {
 			protected TransitionDrawable doInBackground(Void... params) {
 				Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
 				Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
-				backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
+				//backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
+				Utils.cropAdvance(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
 				Drawable backgrounds[] = new Drawable[2];
 				backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
 				backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage);

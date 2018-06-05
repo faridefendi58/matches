@@ -2,6 +2,9 @@ package id.web.jagungbakar.matches;
 
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
@@ -63,8 +66,11 @@ public class MainActivity extends FragmentActivity {
 
 	private void setBackgroundImage() {
 		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-		bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
-		bitmap = Utils.downscaleBitmap(bitmap, 2);
+		//bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
+		//bitmap = Utils.downscaleBitmap(bitmap, 2);
+		// better resizer
+		Utils.cropAdvance(bitmap, Utils.screenWidth(), Utils.screenHeight());
+
 		mBackgroundImage.setImageBitmap(bitmap);
 	}
 

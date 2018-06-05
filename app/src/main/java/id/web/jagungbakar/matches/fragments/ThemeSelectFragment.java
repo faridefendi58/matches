@@ -25,15 +25,17 @@ public class ThemeSelectFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.theme_select_fragment, container, false);
 		View animals = view.findViewById(R.id.theme_animals_container);
-		View monsters = view.findViewById(R.id.theme_monsters_container);
-		View emoji = view.findViewById(R.id.theme_emoji_container);
+		View number = view.findViewById(R.id.theme_number_container);
+		View letter = view.findViewById(R.id.theme_letter_container);
 
 		final Theme themeAnimals = Themes.createAnimalsTheme();
 		setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
-		final Theme themeMonsters = Themes.createMosterTheme();
-		setStars((ImageView) monsters.findViewById(R.id.theme_monsters), themeMonsters, "monsters");
-		final Theme themeEmoji = Themes.createEmojiTheme();
-		setStars((ImageView) emoji.findViewById(R.id.theme_emoji), themeEmoji, "emoji");
+
+		final Theme themeNumber = Themes.createNumberTheme();
+		setStars((ImageView) number.findViewById(R.id.theme_number), themeNumber, "numbers");
+
+		final Theme themeLetter = Themes.createLetterTheme();
+		setStars((ImageView) letter.findViewById(R.id.theme_letter), themeLetter, "letters");
 
 		animals.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -42,17 +44,17 @@ public class ThemeSelectFragment extends Fragment {
 			}
 		});
 
-		monsters.setOnClickListener(new View.OnClickListener() {
+		number.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeMonsters));
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeNumber));
 			}
 		});
 
-		emoji.setOnClickListener(new View.OnClickListener() {
+		letter.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeEmoji));
+				Shared.eventBus.notify(new ThemeSelectedEvent(themeLetter));
 			}
 		});
 
@@ -60,8 +62,8 @@ public class ThemeSelectFragment extends Fragment {
 		 * Imporove performance first!!!
 		 */
 		animateShow(animals);
-		animateShow(monsters);
-		animateShow(emoji);
+		animateShow(number);
+		animateShow(letter);
 
 		return view;
 	}

@@ -24,28 +24,28 @@ public class Themes {
 		return theme;
 	}
 
-	public static Theme createMosterTheme() {
+	public static Theme createNumberTheme() {
 		Theme theme = new Theme();
 		theme.id = 2;
-		theme.name = "Mosters";
-		theme.backgroundImageUrl = URI_DRAWABLE + "back_horror";
+		theme.name = "Number";
+		theme.backgroundImageUrl = URI_DRAWABLE + "background";
 		theme.tileImageUrls = new ArrayList<String>();
-		// 40 drawables
-		for (int i = 1; i <= 40; i++) {
-			theme.tileImageUrls.add(URI_DRAWABLE + String.format("mosters_%d", i));
+		// 25 drawables
+		for (int i = 0; i <= 12; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("numbers_%d", i));
 		}
 		return theme;
 	}
 
-	public static Theme createEmojiTheme() {
+	public static Theme createLetterTheme() {
 		Theme theme = new Theme();
 		theme.id = 3;
-		theme.name = "Emoji";
+		theme.name = "Alphabet";
 		theme.backgroundImageUrl = URI_DRAWABLE + "background";
 		theme.tileImageUrls = new ArrayList<String>();
-		// 40 drawables
-		for (int i = 1; i <= 40; i++) {
-			theme.tileImageUrls.add(URI_DRAWABLE + String.format("emoji_%d", i));
+		// 26 drawables
+		for (int i = 1; i <= 26; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("letter_%d", i));
 		}
 		return theme;
 	}
