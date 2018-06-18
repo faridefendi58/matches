@@ -15,7 +15,7 @@ public class Themes {
 		Theme theme = new Theme();
 		theme.id = 1;
 		theme.name = "Animals";
-		theme.backgroundImageUrl = URI_DRAWABLE + "back_animals";
+		theme.backgroundImageUrl = URI_DRAWABLE + "background";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 40 drawables
 		for (int i = 1; i <= 28; i++) {
@@ -31,7 +31,7 @@ public class Themes {
 		theme.backgroundImageUrl = URI_DRAWABLE + "background";
 		theme.tileImageUrls = new ArrayList<String>();
 		// 25 drawables
-		for (int i = 0; i <= 12; i++) {
+		for (int i = 0; i <= 18; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("numbers_%d", i));
 		}
 		return theme;

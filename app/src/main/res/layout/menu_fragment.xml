@@ -45,7 +45,8 @@
         android:layout_toLeftOf="@id/start_game_button"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/button_google_play" />
+        android:src="@drawable/button_google_play"
+        android:visibility="invisible"/>
 
 	<ImageView
         android:id="@+id/title"
